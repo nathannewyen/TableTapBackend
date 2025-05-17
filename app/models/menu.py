@@ -9,10 +9,10 @@ class Category(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(50), unique=True, index=True)
     description = Column(String(200), nullable=True)
+    img_url = Column(String(500), nullable=True)
     
-    # Remove menu_items relationship if not needed, or update to string if needed elsewhere
-    # menu_items = relationship("MenuItem", back_populates="category")
-    
+    # Relationships
+    menu_items = relationship("MenuItem", back_populates="category_rel")
 
 # Removed duplicate MenuItem class
 

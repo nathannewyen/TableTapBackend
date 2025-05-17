@@ -21,3 +21,14 @@ def get_db():
         yield db
     finally:
         db.close()
+
+def recreate_tables():
+    """Drop and recreate all tables"""
+    # Import models here to avoid circular imports
+    from app.models.menu import Category
+    from app.models.menu_item import MenuItem
+    
+    # Drop all tables
+    Base.metadata.drop_all(bind=engine)
+    # Create all tables
+    Base.metadata.create_all(bind=engine)

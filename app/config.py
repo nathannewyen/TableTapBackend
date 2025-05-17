@@ -1,5 +1,4 @@
 import os
-print("DATABASE_URL from env:", os.environ.get("DATABASE_URL"))
 from pydantic_settings import BaseSettings
 from functools import lru_cache
 
