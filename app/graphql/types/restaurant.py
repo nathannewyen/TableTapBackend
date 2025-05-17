@@ -11,7 +11,7 @@ class RestaurantType:
     email: str
     is_active: bool
     categories: List[CategoryType]
-
+    
 @strawberry.input
 class CreateRestaurantInput:
     name: str

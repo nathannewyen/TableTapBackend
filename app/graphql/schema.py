@@ -1,5 +1,6 @@
 import strawberry
 from app.graphql.mutations.category_mutations import CategoryMutation
+from app.graphql.mutations.menu_item_mutations import MenuItemMutation
 from app.graphql.mutations.restaurant_mutations import RestaurantMutation
 from app.graphql.types.category import CategoryType
 from app.graphql.types.menu_item import MenuItemType
@@ -43,7 +44,7 @@ class Query:
             db.close()
 
 @strawberry.type
-class Mutation(CategoryMutation, RestaurantMutation):
+class Mutation(CategoryMutation, MenuItemMutation, RestaurantMutation):
     pass
 
 schema = strawberry.Schema(

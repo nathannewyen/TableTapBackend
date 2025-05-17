@@ -17,7 +17,7 @@ class MenuItemInput:
     price: float
     imageUrl: Optional[str] = None
     isAvailable: bool = True
-    category_id: int
+    categoryId: int
 
 @strawberry.input
 class UpdateMenuItemInput:
@@ -26,4 +26,4 @@ class UpdateMenuItemInput:
     price: Optional[float] = None
     imageUrl: Optional[str] = None
     isAvailable: Optional[bool] = None
-    category_id: Optional[int] = None 
+    categoryId: Optional[int] = None 
